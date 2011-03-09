@@ -1,45 +1,46 @@
 package net.badgerhunt.typedchess
 
 import org.specs2.mutable._
+import Position._
 
 class NewGameSpecification extends Specification {
 
   "The NewGame" should {
-    "Have all pieces in the correct position" in {
+    "Have all playable pieces in their correct positions" in {
       NewGame.pieces must contain(
-        WhiteRook at 'a1,
-        WhiteKnight at 'b1,
-        WhiteBishop at 'c1,
-        WhiteQueen at 'd1,
-        WhiteKing at 'e1,
-        WhiteBishop at 'f1,
-        WhiteKnight at 'g1,
-        WhiteRook at 'h1,
-        WhitePawn at 'a2,
-        WhitePawn at 'b2,
-        WhitePawn at 'c2,
-        WhitePawn at 'd2,
-        WhitePawn at 'e2,
-        WhitePawn at 'f2,
-        WhitePawn at 'g2,
-        WhitePawn at 'h2,
-        BlackPawn at 'a7,
-        BlackPawn at 'b7,
-        BlackPawn at 'c7,
-        BlackPawn at 'd7,
-        BlackPawn at 'e7,
-        BlackPawn at 'f7,
-        BlackPawn at 'g7,
-        BlackPawn at 'h7,
-        BlackRook at 'a8,
-        BlackKnight at 'b8,
-        BlackBishop at 'c8,
-        BlackQueen at 'd8,
-        BlackKing at 'e8,
-        BlackBishop at 'f8,
-        BlackKnight at 'g8,
-        BlackRook at 'h8
-      ).exactly
+        PlacedPiece(White, Rook, A1),
+        PlacedPiece(White, Knight, B1),
+        PlacedPiece(White, Bishop, C1),
+        PlacedPiece(White, Queen, D1),
+        PlacedPiece(White, King, E1),
+        PlacedPiece(White, Bishop, F1),
+        PlacedPiece(White, Knight, G1),
+        PlacedPiece(White, Rook, H1),
+        PlacedPiece(White, Pawn, A2),
+        PlacedPiece(White, Pawn, B2),
+        PlacedPiece(White, Pawn, C2),
+        PlacedPiece(White, Pawn, D2),
+        PlacedPiece(White, Pawn, E2),
+        PlacedPiece(White, Pawn, F2),
+        PlacedPiece(White, Pawn, G2),
+        PlacedPiece(White, Pawn, H2),
+        PlacedPiece(Black, Pawn, A7),
+        PlacedPiece(Black, Pawn, B7),
+        PlacedPiece(Black, Pawn, C7),
+        PlacedPiece(Black, Pawn, D7),
+        PlacedPiece(Black, Pawn, E7),
+        PlacedPiece(Black, Pawn, F7),
+        PlacedPiece(Black, Pawn, G7),
+        PlacedPiece(Black, Pawn, H7),
+        PlacedPiece(Black, Rook, A8),
+        PlacedPiece(Black, Knight, B8),
+        PlacedPiece(Black, Bishop, C8),
+        PlacedPiece(Black, Queen, D8),
+        PlacedPiece(Black, King, E8),
+        PlacedPiece(Black, Bishop, F8),
+        PlacedPiece(Black, Knight, G8),
+        PlacedPiece(Black, Rook, H8)
+      ).only
     }
   }
 
