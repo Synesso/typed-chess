@@ -3,7 +3,8 @@ package net.badgerhunt.typedchess
 import Position._
 
 object NewGame {
-  val pieces = List(PlacedPiece(White, Rook, A1),
+  val pieces = List(
+    PlacedPiece(White, Rook, A1),
     PlacedPiece(White, Knight, B1),
     PlacedPiece(White, Bishop, C1),
     PlacedPiece(White, Queen, D1),
