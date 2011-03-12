@@ -8,7 +8,7 @@ class NewGameSpecification extends Specification {
 
   "The NewGame" should {
     "Have all playable pieces in their correct positions" in {
-      NewGame.pieces must contain(
+      NewGame.pieces.values must contain(
         PlacedPiece(White, Rook, A1),
         PlacedPiece(White, Knight, B1),
         PlacedPiece(White, Bishop, C1),

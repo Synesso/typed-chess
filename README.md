@@ -24,5 +24,10 @@ newgame-allow-white-to-play-red2:
 Added a few methods to allow compilation, but the spec fails as it is not implemented correctly. Plus there's some
 definite need for refactoring in NewGame regarding how it models pieces on the board.
 
+newgame-allow-white-to-play-green:
+
+whiteMoves method has to return something other than a NewGame, as we have need to modify the pieces. In the process
+it becomes evident that pieces should become a Map[Position, Piece]
+
 
 
