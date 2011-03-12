@@ -19,5 +19,10 @@ newgame-allow-white-to-play-red:
 
 A new game should allow white to start. Write the spec and let it fail.
 
-newgame-allow-white-to-play-green:
+newgame-allow-white-to-play-red2:
+
+Added a few methods to allow compilation, but the spec fails as it is not implemented correctly. Plus there's some
+definite need for refactoring in NewGame regarding how it models pieces on the board.
+
+
 

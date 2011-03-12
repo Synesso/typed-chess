@@ -44,27 +44,10 @@ class NewGameSpecification extends Specification {
       ).only
     }
 
-/*    "Allow White to play" in {
+    "Allow White to play" in {
       val updatedGame = NewGame whiteMoves D2 to D4
       updatedGame pieceAt D2 must beNone
       updatedGame pieceAt D4 must beSome(PlacedPiece(White, Pawn, D4))
     }
-*/
-  }
-
-  class NotAllowToPlay[T <: Team](t: T) extends Matcher[Game] {
-    def apply[G <: Game](g: Expectable[G]) = {
-      result(g match {
-        case _: { def move(s: String): String } => false
-        case _ => true
-      }, "Game does not allow %s to play".format(t), "Game allows %s to play".format(t), g)
-    }
-  }
-
-  "A game with white to play" should {
-    "not allow black to play" in {
-      val notAllowBlackToPlay = new NotAllowToPlay(Black)
-      NewGame must notAllowBlackToPlay
-   }
   }
 }

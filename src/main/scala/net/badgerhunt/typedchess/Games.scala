@@ -1,5 +1,7 @@
 package net.badgerhunt.typedchess
 
+import Position._
+
 sealed trait Game
 trait WhiteToPlay extends Game
 trait BlackToPlay extends Game
@@ -15,5 +17,13 @@ object NewGame extends WhiteToPlay {
 
     whiteBackRow ::: whitePawnRow ::: blackPawnRow ::: blackBackRow
   }
+
+  def whiteMoves(origin: Position) = new {
+    def to(destination: Position) = {
+      NewGame
+    }
+  }
+
+  def pieceAt(pos: Position) = pieces.filter(_.position == pos).headOption
 
 }
