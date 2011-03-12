@@ -49,5 +49,4 @@ class NewGameSpecification extends Specification {
       updatedGame pieceAt D4 must beSome(PlacedPiece(White, Pawn, D4))
     }
   }
-
 }
