@@ -2,14 +2,12 @@ package net.badgerhunt.typedchess
 
 import org.specs2.mutable._
 import org.specs2.ScalaCheck
-import org.scalacheck.{Prop, Gen}
-
 import Position._
+import org.scalacheck.{Arbitrary, Gen}
 
 
 class PieceSpecification extends Specification with ScalaCheck {
 
-/*
   val positionAndPieceGenerator = for {
     position <- Gen.oneOf(Position.values.toSeq)
     team <- Gen.oneOf(Black, White)
@@ -17,9 +15,15 @@ class PieceSpecification extends Specification with ScalaCheck {
   } yield (position, UnplacedPiece(team, role))
 
   "Every piece" should {
-    "be positionable" ! Prop.forAll(positionAndPieceGenerator) {case (position, piece) =>
-      (piece at position).position must_== position
+    "be placeable" ! checkProp {
+      implicit def arb = Arbitrary{positionAndPieceGenerator}
+      asProperty{(positionAndPiece: (Position, UnplacedPiece)) =>
+        val (position, unplacedPiece) = positionAndPiece
+        val piece = unplacedPiece at position
+        position.toString must haveSize(2)
+        piece must haveClass[PlacedPiece]
+        piece.position must_== position
+      }
     }
   }
-*/
 }
