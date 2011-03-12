@@ -20,7 +20,6 @@ class PieceSpecification extends Specification with ScalaCheck {
       asProperty{(positionAndPiece: (Position, UnplacedPiece)) =>
         val (position, unplacedPiece) = positionAndPiece
         val piece = unplacedPiece at position
-        position.toString must haveSize(2)
         piece must haveClass[PlacedPiece]
         piece.position must_== position
       }
