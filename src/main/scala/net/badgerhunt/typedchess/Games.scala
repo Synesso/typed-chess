@@ -1,6 +1,10 @@
 package net.badgerhunt.typedchess
 
-object NewGame {
+sealed trait Game
+trait WhiteToPlay extends Game
+trait BlackToPlay extends Game
+
+object NewGame extends WhiteToPlay {
 
   val pieces = {
     val backRow = List(Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook)
