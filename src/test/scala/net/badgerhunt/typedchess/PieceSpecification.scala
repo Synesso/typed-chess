@@ -17,12 +17,11 @@ class PieceSpecification extends Specification with ScalaCheck {
   "Every unplaced piece" should {
     "be placeable" ! checkProp {
       implicit def arb = Arbitrary{positionAndPieceGenerator}
-      asProperty{(positionAndPiece: (Position, UnplacedPiece)) =>
+      (positionAndPiece: (Position, UnplacedPiece)) =>
         val (position, unplacedPiece) = positionAndPiece
         val piece = unplacedPiece at position
         piece must haveClass[PlacedPiece]
         piece.position must_== position
-      }
     }
   }
 }
