@@ -42,6 +42,12 @@ class NewGameSpecification extends Specification {
         PlacedPiece(Black, Rook, H8)
       ).only
     }
+
+    "Allow White to play" in {
+      val updatedGame = NewGame whiteMoves D2 to D4
+      updatedGame pieceAt D2 must beNone
+      updatedGame pieceAt D4 must beSome(PlacedPiece(White, Pawn, D4))
+    }
   }
 
 }

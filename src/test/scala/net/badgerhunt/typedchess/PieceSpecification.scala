@@ -14,7 +14,7 @@ class PieceSpecification extends Specification with ScalaCheck {
     role <- Gen.oneOf(Pawn, Rook, Knight, Bishop, Queen, King)
   } yield (position, UnplacedPiece(team, role))
 
-  "Every piece" should {
+  "Every unplaced piece" should {
     "be placeable" ! checkProp {
       implicit def arb = Arbitrary{positionAndPieceGenerator}
       asProperty{(positionAndPiece: (Position, UnplacedPiece)) =>

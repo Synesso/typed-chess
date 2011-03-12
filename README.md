@@ -14,3 +14,8 @@ newgame-pieces-positioned-refactor:
 
 NewGameSpecification passes because we have effectively just copied the assertion into the newly created NewGame type.
 Time to refactor?
+
+newgame-allow-white-to-play-red:
+
+A new game should allow white to start. Write the spec and let it fail.
+
